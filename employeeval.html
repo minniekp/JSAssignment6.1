@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Validation Form</title>
+</head>
+
+<body>
+    <h2>Validate Input</h2>
+
+    <p>Please input basic salary of an employee:</p>
+
+    <input id="numb">
+
+    <button type="button" onclick="myFunction()">Submit</button>
+
+    <p id="demo"></p>
+
+    <p>Please input number of hours worked</p>
+
+    <input id="hours">
+
+    <button type="button" onclick="myFunction()">Submit</button>
+
+    <p id="demo"></p>
+
+    <script>
+       function myFunction() {
+       var salary = 0;
+       var hrs = 0;
+       var text;
+
+    // Get the value of the input field with id="numb"
+    salary = Number(document.getElementById("numb").value);
+    hrs= Number(document.getElementById("hours").value);
+
+    // If x is Not a Number or less than one or greater than 10
+    if (isNaN(salary) || isNaN(hrs))  {
+        text = "Input not valid";
+    } else if(salary >=15000 || hours > 10) {
+        text = "Input OK";
+        salary=salary + 0.01;
+        console.log(salary);
+    } else {
+    	salary = salary + 0.05;
+        document.getElementById("salary").innerHTML = salary;
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+<div id="salary">Display the output here</div>
+
+</body>
+</html>
